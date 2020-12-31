@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Library Management System Application" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Library Management System Application" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Library Management System Application" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="`pkg-config gtk+-3.0 --cflags` -lcrypto -lssl" />
+		</Compiler>
+		<Linker>
+			<Add option="`pkg-config gtk+-3.0 --libs` -export-dynamic -lcrypto -lssl" />
+		</Linker>
+		<Unit filename="accounts.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="accounts.h" />
+		<Unit filename="add_account.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="add_account.h" />
+		<Unit filename="add_book.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="add_book.h" />
+		<Unit filename="add_copy.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="add_copy.h" />
+		<Unit filename="authentication.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="authentication.h" />
+		<Unit filename="books.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="books.h" />
+		<Unit filename="copies.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="copies.h" />
+		<Unit filename="delete_account.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="delete_account.h" />
+		<Unit filename="delete_book.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="delete_book.h" />
+		<Unit filename="delete_copy.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="delete_copy.h" />
+		<Unit filename="delete_reservation.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="delete_reservation.h" />
+		<Unit filename="edit_account.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="edit_account.h" />
+		<Unit filename="edit_book.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="edit_book.h" />
+		<Unit filename="general.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="general.h" />
+		<Unit filename="general_structs.h" />
+		<Unit filename="glade/window_main.glade" />
+		<Unit filename="gui.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="gui.h" />
+		<Unit filename="gui_structs.h" />
+		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="manage_copies.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="manage_copies.h" />
+		<Unit filename="reservations.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="reservations.h" />
+		<Unit filename="reserve_book.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="reserve_book.h" />
+		<Unit filename="return_book.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="return_book.h" />
+		<Unit filename="search_account.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="search_account.h" />
+		<Unit filename="search_book.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="search_book.h" />
+		<Unit filename="search_copy.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="search_copy.h" />
+		<Unit filename="search_reservation.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="search_reservation.h" />
+		<Unit filename="search_reservation_book.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="search_reservation_book.h" />
+		<Unit filename="search_reserved_book.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="search_reserved_book.h" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
