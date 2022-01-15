@@ -685,17 +685,74 @@ ACCOUNT* authenticate_from_file(char* email, char* password)
 int get_new_account_id()
 {
     int max_id = 0; // Integer to hold newest id increment
-    FILE* fptr;
+    FILE *ifp, *ofp; // ifp: input file, ofp: output file
+    ACCOUNT_NODE* current; // Temporary account node to loop through the linked list
     ACCOUNT* buffer = (ACCOUNT*)malloc(sizeof(ACCOUNT)); // Temporary account pointer used as a buffer to read from file
+    ACCOUNT_NODE* node = NULL; // Temporary node used to construct account linked list
+    EVP_CIPHER_CTX* ctx; // Cipher context
+    int plain_len = 0; // Length of plain text
+    long cipher_len; // Length of cipher text
+    unsigned char *plain_data; // Plain text
+    unsigned char *cipher_data; // Cipher text
+    unsigned char key[] = "4u7w!z%C*F-JaNdRgUkXp2s5v8y/A?D("; // AES-256 key
+    unsigned char iv[] = "Zr4u7x!A%D*G-KaP"; // AES-256 initialization vector
 
-    fptr = fopen("accounts", "rb");
-    if(!fptr)
+    // accounts holds encrypted accounts data
+    ifp = fopen("accounts", "rb");
+    // accounts_tmp is used to store plain accounts data after decrypting it
+    // It is deleted after decryption is done and list is constructed
+    ofp = fopen("accounts_tmp", "wb");
+
+    ctx = EVP_CIPHER_CTX_new();
+
+    // Get length of encrypted file content
+    fseek(ifp, 0L, SEEK_END);
+    cipher_len = ftell(ifp);
+    fseek(ifp, 0L, SEEK_SET);
+
+    plain_len = 0;
+    cipher_data = (unsigned char*)malloc(cipher_len);
+    if(!cipher_data)
     {
-        printf("Error! Could not open file.");
-        return -1;
+        printf("\nError while allocating memory!");
+        return;
     }
 
-    while(fread(buffer, sizeof(ACCOUNT), 1, fptr) == 1)
+    plain_data = (unsigned char*)malloc(cipher_len);
+    if(!plain_data)
+    {
+        printf("\nError while allocating memory!");
+        return;
+    }
+
+    // Read encrypted file content into cipher_data
+    fread(cipher_data, 1, cipher_len, ifp);
+
+    // Initialize decryption context
+    EVP_DecryptInit(ctx, EVP_aes_256_cbc(), key, iv);
+    // Decrypt cipher_data and store it in plain_data
+    EVP_DecryptUpdate(ctx, plain_data, &plain_len, cipher_data, (int)cipher_len);
+    // Write plain_data to temporary file
+    fwrite(plain_data, 1, plain_len, ofp);
+    // Decrypt final block and store it in plain_data
+    EVP_DecryptFinal(ctx, plain_data, &plain_len);
+    // Write plain_data to temporary file
+    fwrite(plain_data, 1, plain_len, ofp);
+
+    free(cipher_data);
+    free(plain_data);
+
+    fclose(ifp);
+    fclose(ofp);
+
+    // Read accounts data from decrypted file and construct linked list
+    ofp = fopen("accounts_tmp", "rb");
+    if(!ofp)
+    {
+        printf("Error! Could not open file.");
+        return;
+    }
+    while(fread(buffer, sizeof(ACCOUNT), 1, ofp) == 1)
     {
         // Get the largest id of the stored accounts
         if(buffer->id > max_id)
@@ -705,7 +762,10 @@ int get_new_account_id()
     }
 
     free(buffer);
-    fclose(fptr);
+
+    // Delete temporary file
+    remove("accounts_tmp");
+    fclose(ofp);
 
     // Increment largest id by 1 and return it
     return max_id + 1;

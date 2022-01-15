@@ -78,8 +78,8 @@ void on_btn_search_reservation_confirm_clicked(GtkButton* button, GLOBAL_DATA *g
         g_data->copy_list,
         g_data->book_list,
         gtk_entry_get_text(GTK_ENTRY(g_data->app_wdgts->admin_main_wdgts->search_reservation_wdgts->entry_search_reservation_title)),
-        gtk_entry_get_text(GTK_ENTRY(g_data->app_wdgts->admin_main_wdgts->search_reservation_wdgts->entry_search_reservation_author)),
         NULL,
+        gtk_entry_get_text(GTK_ENTRY(g_data->app_wdgts->admin_main_wdgts->search_reservation_wdgts->entry_search_reservation_author)),
         NULL,
         0
     );

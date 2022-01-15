@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.22.1 -->
+<!-- Generated with glade 3.22.2 -->
 <interface>
   <requires lib="gtk+" version="3.20"/>
   <!-- interface-css-provider-path main.css -->
   <object class="GtkWindow">
     <property name="can_focus">False</property>
     <property name="resizable">False</property>
-    <child>
+    <child type="titlebar">
       <placeholder/>
     </child>
     <child>
@@ -317,13 +317,13 @@
       <column type="gchararray"/>
       <!-- column-name Due -->
       <column type="gchararray"/>
-      <!-- column-name Id Copy -->
+      <!-- column-name Id1 -->
       <column type="gint"/>
-      <!-- column-name Id User -->
+      <!-- column-name Id2 -->
       <column type="gint"/>
-      <!-- column-name Reservation Date Value -->
+      <!-- column-name Reservation1 -->
       <column type="gint"/>
-      <!-- column-name Due Date Value -->
+      <!-- column-name Due1 -->
       <column type="gint"/>
     </columns>
   </object>
@@ -334,7 +334,7 @@
     <property name="title" translatable="yes">Library Manager</property>
     <property name="resizable">False</property>
     <signal name="destroy" handler="on_window_main_destroy" swapped="no"/>
-    <child>
+    <child type="titlebar">
       <placeholder/>
     </child>
     <child>
@@ -1784,7 +1784,7 @@
     <property name="type_hint">dialog</property>
     <property name="transient_for">window_main</property>
     <signal name="delete-event" handler="on_dialog_verify_delete_account_delete_event" swapped="no"/>
-    <child>
+    <child type="titlebar">
       <placeholder/>
     </child>
     <child internal-child="vbox">
@@ -1886,7 +1886,7 @@
     <property name="type_hint">dialog</property>
     <property name="deletable">False</property>
     <property name="transient_for">dialog_verify_delete_account</property>
-    <child>
+    <child type="titlebar">
       <placeholder/>
     </child>
     <child internal-child="vbox">
@@ -1974,7 +1974,7 @@
     <property name="type_hint">dialog</property>
     <property name="transient_for">window_main</property>
     <signal name="delete-event" handler="on_dialog_verify_delete_book_delete_event" swapped="no"/>
-    <child>
+    <child type="titlebar">
       <placeholder/>
     </child>
     <child internal-child="vbox">
@@ -2078,7 +2078,7 @@
     <property name="type_hint">dialog</property>
     <property name="deletable">False</property>
     <property name="transient_for">dialog_verify_delete_book</property>
-    <child>
+    <child type="titlebar">
       <placeholder/>
     </child>
     <child internal-child="vbox">
@@ -2168,7 +2168,7 @@
     <property name="type_hint">dialog</property>
     <property name="transient_for">window_main</property>
     <signal name="delete-event" handler="on_dialog_verify_delete_reservation_delete_event" swapped="no"/>
-    <child>
+    <child type="titlebar">
       <placeholder/>
     </child>
     <child internal-child="vbox">
@@ -2270,7 +2270,7 @@
     <property name="type_hint">dialog</property>
     <property name="deletable">False</property>
     <property name="transient_for">dialog_verify_delete_reservation</property>
-    <child>
+    <child type="titlebar">
       <placeholder/>
     </child>
     <child internal-child="vbox">
@@ -2356,7 +2356,7 @@
     <property name="resizable">False</property>
     <property name="transient_for">window_main</property>
     <signal name="delete-event" handler="on_window_add_account_delete_event" swapped="no"/>
-    <child>
+    <child type="titlebar">
       <placeholder/>
     </child>
     <child>
@@ -2717,7 +2717,7 @@
     <property name="type_hint">dialog</property>
     <property name="deletable">False</property>
     <property name="transient_for">window_add_account</property>
-    <child>
+    <child type="titlebar">
       <placeholder/>
     </child>
     <child internal-child="vbox">
@@ -2803,7 +2803,7 @@
     <property name="resizable">False</property>
     <property name="transient_for">window_main</property>
     <signal name="delete-event" handler="on_window_add_book_delete_event" swapped="no"/>
-    <child>
+    <child type="titlebar">
       <placeholder/>
     </child>
     <child>
@@ -3105,7 +3105,7 @@
     <property name="type_hint">dialog</property>
     <property name="deletable">False</property>
     <property name="transient_for">window_add_book</property>
-    <child>
+    <child type="titlebar">
       <placeholder/>
     </child>
     <child internal-child="vbox">
@@ -3193,7 +3193,7 @@
     <property name="resizable">False</property>
     <property name="transient_for">window_main</property>
     <signal name="delete-event" handler="on_window_edit_account_delete_event" swapped="no"/>
-    <child>
+    <child type="titlebar">
       <placeholder/>
     </child>
     <child>
@@ -3552,7 +3552,7 @@
     <property name="type_hint">dialog</property>
     <property name="deletable">False</property>
     <property name="transient_for">window_edit_account</property>
-    <child>
+    <child type="titlebar">
       <placeholder/>
     </child>
     <child internal-child="vbox">
@@ -3638,7 +3638,7 @@
     <property name="resizable">False</property>
     <property name="transient_for">window_main</property>
     <signal name="delete-event" handler="on_window_edit_book_delete_event" swapped="no"/>
-    <child>
+    <child type="titlebar">
       <placeholder/>
     </child>
     <child>
@@ -3939,7 +3939,7 @@
     <property name="type_hint">dialog</property>
     <property name="deletable">False</property>
     <property name="transient_for">window_edit_book</property>
-    <child>
+    <child type="titlebar">
       <placeholder/>
     </child>
     <child internal-child="vbox">
@@ -4027,7 +4027,7 @@
     <property name="resizable">False</property>
     <property name="transient_for">window_main</property>
     <signal name="delete-event" handler="on_window_manage_copies_delete_event" swapped="no"/>
-    <child>
+    <child type="titlebar">
       <placeholder/>
     </child>
     <child>
@@ -4193,7 +4193,7 @@
     <property name="type_hint">dialog</property>
     <property name="transient_for">window_manage_copies</property>
     <signal name="delete-event" handler="on_dialog_verify_delete_copy_delete_event" swapped="no"/>
-    <child>
+    <child type="titlebar">
       <placeholder/>
     </child>
     <child internal-child="vbox">
@@ -4295,7 +4295,7 @@
     <property name="type_hint">dialog</property>
     <property name="deletable">False</property>
     <property name="transient_for">dialog_verify_delete_copy</property>
-    <child>
+    <child type="titlebar">
       <placeholder/>
     </child>
     <child internal-child="vbox">
@@ -4381,7 +4381,7 @@
     <property name="resizable">False</property>
     <property name="transient_for">window_manage_copies</property>
     <signal name="delete-event" handler="on_window_add_copy_delete_event" swapped="no"/>
-    <child>
+    <child type="titlebar">
       <placeholder/>
     </child>
     <child>
@@ -4511,7 +4511,7 @@
     <property name="type_hint">dialog</property>
     <property name="deletable">False</property>
     <property name="transient_for">window_add_copy</property>
-    <child>
+    <child type="titlebar">
       <placeholder/>
     </child>
     <child internal-child="vbox">
@@ -4597,7 +4597,7 @@
     <property name="resizable">False</property>
     <property name="transient_for">window_manage_copies</property>
     <signal name="delete-event" handler="on_window_search_copy_delete_event" swapped="no"/>
-    <child>
+    <child type="titlebar">
       <placeholder/>
     </child>
     <child>
@@ -4754,7 +4754,7 @@
     <property name="resizable">False</property>
     <property name="transient_for">window_main</property>
     <signal name="delete-event" handler="on_window_search_account_delete_event" swapped="no"/>
-    <child>
+    <child type="titlebar">
       <placeholder/>
     </child>
     <child>
@@ -4985,7 +4985,7 @@
     <property name="resizable">False</property>
     <property name="transient_for">window_main</property>
     <signal name="delete-event" handler="on_window_search_book_delete_event" swapped="no"/>
-    <child>
+    <child type="titlebar">
       <placeholder/>
     </child>
     <child>
@@ -5215,7 +5215,7 @@
     <property name="resizable">False</property>
     <property name="transient_for">window_main</property>
     <signal name="delete-event" handler="on_window_search_reservation_delete_event" swapped="no"/>
-    <child>
+    <child type="titlebar">
       <placeholder/>
     </child>
     <child>
@@ -5606,11 +5606,11 @@
       <column type="gchararray"/>
       <!-- column-name Due -->
       <column type="gchararray"/>
-      <!-- column-name Id Copy -->
+      <!-- column-name Id1 -->
       <column type="gint"/>
-      <!-- column-name Reservation Date Value -->
+      <!-- column-name Reservation1 -->
       <column type="gint"/>
-      <!-- column-name Due Date Value -->
+      <!-- column-name Due1 -->
       <column type="gint"/>
     </columns>
   </object>
@@ -5621,7 +5621,7 @@
     <property name="title" translatable="yes">Library Manager</property>
     <property name="resizable">False</property>
     <signal name="destroy-event" handler="on_window_user_main_destroy_event" swapped="no"/>
-    <child>
+    <child type="titlebar">
       <placeholder/>
     </child>
     <child>
@@ -6016,7 +6016,7 @@
                             <property name="min_width">240</property>
                             <property name="title" translatable="yes">Due Date</property>
                             <property name="sort_indicator">True</property>
-                            <property name="sort_column_id">4</property>
+                            <property name="sort_column_id">7</property>
                             <child>
                               <object class="GtkCellRendererText"/>
                               <attributes>
@@ -6525,7 +6525,7 @@
     <property name="type_hint">dialog</property>
     <property name="deletable">False</property>
     <property name="transient_for">window_user_main</property>
-    <child>
+    <child type="titlebar">
       <placeholder/>
     </child>
     <child internal-child="vbox">
@@ -6613,7 +6613,7 @@
     <property name="type_hint">dialog</property>
     <property name="transient_for">window_user_main</property>
     <signal name="delete-event" handler="on_dialog_verify_return_delete_event" swapped="no"/>
-    <child>
+    <child type="titlebar">
       <placeholder/>
     </child>
     <child internal-child="vbox">
@@ -6715,7 +6715,7 @@
     <property name="type_hint">dialog</property>
     <property name="deletable">False</property>
     <property name="transient_for">dialog_verify_return_book</property>
-    <child>
+    <child type="titlebar">
       <placeholder/>
     </child>
     <child internal-child="vbox">
@@ -6801,7 +6801,7 @@
     <property name="resizable">False</property>
     <property name="transient_for">window_user_main</property>
     <signal name="delete-event" handler="on_window_reserve_book_delete_event" swapped="no"/>
-    <child>
+    <child type="titlebar">
       <placeholder/>
     </child>
     <child>
@@ -6931,7 +6931,7 @@
     <property name="type_hint">dialog</property>
     <property name="deletable">False</property>
     <property name="transient_for">window_reserve_book</property>
-    <child>
+    <child type="titlebar">
       <placeholder/>
     </child>
     <child internal-child="vbox">
@@ -7017,7 +7017,7 @@
     <property name="resizable">False</property>
     <property name="transient_for">window_user_main</property>
     <signal name="delete-event" handler="on_window_search_reservation_book_delete_event" swapped="no"/>
-    <child>
+    <child type="titlebar">
       <placeholder/>
     </child>
     <child>
@@ -7247,7 +7247,7 @@
     <property name="resizable">False</property>
     <property name="transient_for">window_user_main</property>
     <signal name="delete-event" handler="on_window_search_reserved_book_delete_event" swapped="no"/>
-    <child>
+    <child type="titlebar">
       <placeholder/>
     </child>
     <child>
@@ -7627,12 +7627,12 @@
     </child>
   </object>
   <object class="GtkWindow" id="window_authentication">
-    <property name="width_request">400</property>
+    <property name="width_request">900</property>
     <property name="height_request">280</property>
     <property name="can_focus">False</property>
     <property name="resizable">False</property>
     <signal name="destroy" handler="on_window_authentication_destroy" swapped="no"/>
-    <child>
+    <child type="titlebar">
       <placeholder/>
     </child>
     <child>
@@ -7842,7 +7842,7 @@
     <property name="type_hint">dialog</property>
     <property name="deletable">False</property>
     <property name="transient_for">window_authentication</property>
-    <child>
+    <child type="titlebar">
       <placeholder/>
     </child>
     <child internal-child="vbox">

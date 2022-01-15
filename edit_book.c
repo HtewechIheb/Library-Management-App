@@ -42,11 +42,6 @@ void on_btn_edit_book_confirm_clicked(GtkButton* button, GLOBAL_DATA *g_data)
         gtk_widget_set_visible(g_data->app_wdgts->admin_main_wdgts->edit_book_wdgts->error_edit_book_language_required, TRUE);
         valid = FALSE;
     }
-    if(strlen(gtk_entry_get_text(GTK_ENTRY(g_data->app_wdgts->admin_main_wdgts->edit_account_wdgts->entry_edit_account_phone))) < 8)
-    {
-        gtk_widget_set_visible(g_data->app_wdgts->admin_main_wdgts->edit_account_wdgts->error_edit_account_phone_invalid, TRUE);
-        valid = FALSE;
-    }
 
     if(valid)
     {
